@@ -1,3 +1,4 @@
+# Simple game
 class HeroCommon:
   def __init__(self, name):
     self.name = name
