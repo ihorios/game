@@ -1,0 +1,50 @@
+class HeroCommon:
+  def __init__(self, name):
+    self.name = name
+    self.hp = 50
+    self.armor = 20
+    self.stars = 1
+
+  def attack(self):
+    return 50  
+
+  def toString(self):
+    return self.name + ":" + str(self.hp)
+
+class HeroUncommon:
+  def __init__(self, name):
+    self.name = name
+    self.hp = 60
+    self.armor = 30
+    self.stars = 2
+
+  def attack(self):
+    return 60
+
+  def toString(self):
+    return self.name + ":" + str(self.hp)
+
+jane = HeroCommon("Jane")
+olaf = HeroUncommon("Olaf")
+print jane.toString()
+print olaf.toString()
+
+count = 0
+while jane.hp > 0 and olaf.hp > 0:
+  count += 1
+  print "Attack " + str(count)
+  if jane.hp > 0:
+    damage = jane.attack()
+    damage = damage - olaf.armor
+    olaf.hp = olaf.hp - damage
+    print "Jane attack:" + olaf.toString()
+  if olaf.hp > 0:
+    damage = olaf.attack()
+    damage = damage - jane.armor
+    jane.hp = jane.hp - damage
+    print "Olaf attack:" + jane.toString()
+  raw_input()
+if jane.hp > 0:
+   print "Winner: " + jane.toString()
+if olaf.hp > 0:
+   print "Winner: " + olaf.toString()
