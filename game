@@ -9,29 +9,37 @@ def pause():
   else:
     input()
 
-randomNum = random.randint(0, 11);
-while randomNum != 0:
-  randomNum = random.randint(0, 11);  
-  print(randomNum)  
+class Armor:
+  types = ["armory", "helmet", "shield", "mail"]  
+  def __init__(self):
+    self.name = random.choice(self.types)
+    self.defence = random.randint(1, 20)
+
+  def toString(self):
+    return self.name + ":" + str(self.defence)  
+
+  def protect(self, damage):
+    return damage - self.defence      
+    
 
 class HeroCommon:
   def __init__(self, name):
     self.name = name
     self.hp = 90
-    self.armor = 10
+    self.armor = Armor()
     self.stars = 1
 
   def attack(self):
     return 50 
 
   def toString(self):
-    return self.name + ":" + str(self.hp)
+    return self.name + ":" + str(self.hp) + self.armor.toString()
 
 class HeroUncommon:
   def __init__(self, name):
     self.name = name
     self.hp = 105
-    self.armor = 15
+    self.armor = Armor()
     self.stars = 2
 
   def attack(self):
@@ -51,12 +59,12 @@ while jane.hp > 0 and olaf.hp > 0:
   print ("Attack " + str(count))
   if jane.hp > 0:
     damage = jane.attack()
-    damage = damage - olaf.armor
+    damage = olaf.armor.protect(damage)
     olaf.hp = olaf.hp - damage
     print ("Jane attack:" + olaf.toString())
   if olaf.hp > 0:
     damage = olaf.attack()
-    damage = damage - jane.armor
+    damage = jane.armor.protect(damage)
     jane.hp = jane.hp - damage
     print ("Olaf attack:" + jane.toString())
   pause()
