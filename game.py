@@ -1,7 +1,8 @@
 # Simple game
 
 import sys
-from armor import Armor
+from hero_common import HeroCommon
+from hero_uncommon import HeroUncommon
 
 def pause():
   if sys.version_info >= (3, 5):
@@ -9,31 +10,8 @@ def pause():
   else:
     input()
 
-class HeroCommon:
-  def __init__(self, name):
-    self.name = name
-    self.hp = 90
-    self.armor = Armor()
-    self.stars = 1
 
-  def attack(self):
-    return 50 
 
-  def toString(self):
-    return self.name + ":" + str(self.hp) + self.armor.toString()
-
-class HeroUncommon:
-  def __init__(self, name):
-    self.name = name
-    self.hp = 105
-    self.armor = Armor()
-    self.stars = 2
-
-  def attack(self):
-    return 60
-
-  def toString(self):
-    return self.name + ":" + str(self.hp) + self.armor.toString()
 
 jane = HeroCommon("Jane")
 olaf = HeroUncommon("Olaf")
