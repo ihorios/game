@@ -22,15 +22,11 @@ count = 0
 while jane.hp > 0 and olaf.hp > 0:
   count += 1
   print ("Attack " + str(count))
-  if jane.hp > 0:
-    damage = jane.attack()
-    damage = olaf.armor.protect(damage)
-    olaf.hp = olaf.hp - damage
+  if jane.isAlive():
+    olaf.defend(jane.attack())
     print ("Jane attack:" + olaf.toString())
-  if olaf.hp > 0:
-    damage = olaf.attack()
-    damage = jane.armor.protect(damage)
-    jane.hp = jane.hp - damage
+  if olaf.isAlive():
+    jane.defend(olaf.attack())
     print ("Olaf attack:" + jane.toString())
   pause()
 if jane.hp > 0:
