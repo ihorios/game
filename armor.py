@@ -9,5 +9,7 @@ class Armor:
     return self.name + ":" + str(self.defence)  
 
   def protect(self, damage):
+    if damage < self.defence:
+      return 0
     return damage - self.defence      
     
