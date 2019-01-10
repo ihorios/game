@@ -5,7 +5,7 @@ from hero_common import HeroCommon
 from hero_uncommon import HeroUncommon
 
 def pause():
-  if sys.version_info >= (3, 5):
+  if sys.version_info < (3, 4):
     raw_input()
   else:
     input()
@@ -15,6 +15,11 @@ def pause():
 
 jane = HeroCommon("Jane")
 olaf = HeroUncommon("Olaf")
+print(" ");
+print("-------------------------");
+print("--- WELCOME TO HEROES ---");
+print("-------------------------");
+print(" ");
 print (jane.toString())
 print (olaf.toString())
 
