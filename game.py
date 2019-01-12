@@ -3,6 +3,7 @@
 import sys
 from hero_common import HeroCommon
 from hero_uncommon import HeroUncommon
+from map import Map
 
 def pause():
   if sys.version_info < (3, 4):
@@ -19,6 +20,9 @@ print(" ");
 print("-------------------------");
 print("--- WELCOME TO HEROES ---");
 print("-------------------------");
+print(" ");
+mapp = Map()
+print(mapp);
 print(" ");
 print (jane.toString())
 print (olaf.toString())
