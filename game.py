@@ -11,9 +11,6 @@ def pause():
   else:
     input()
 
-
-
-
 jane = HeroCommon("Jane")
 olaf = HeroUncommon("Olaf")
 print(" ");
@@ -21,7 +18,7 @@ print("-------------------------");
 print("--- WELCOME TO HEROES ---");
 print("-------------------------");
 print(" ");
-mapp = Map()
+mapp = Map(5, 7)
 print(mapp);
 print(" ");
 print (jane.toString())
