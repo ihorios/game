@@ -1,12 +1,12 @@
 import random
 
 class Map:
-  red = "1"
-  blue = "2"
-  yellow = "3"
-  violet = "4"
-  green = "5"
-  colors = [ "1", "2", "3", "4", "5" ];
+  red = "!"
+  blue = "%"
+  yellow = "#"
+  violet = "@"
+  green = "*"
+  colors = [ "!", "%", "#", "@", "*" ];
   
   def __init__(self, height=5, width=5):
     self.height = height

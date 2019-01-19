@@ -1,6 +1,7 @@
 # Simple game
 
 import sys
+import os
 from hero_common import HeroCommon
 from hero_uncommon import HeroUncommon
 from map import Map
@@ -11,11 +12,18 @@ def pause():
   else:
     input()
 
+os.system('color 0')
+
 jane = HeroCommon("Jane")
 olaf = HeroUncommon("Olaf")
+
+
 print(" ");
+os.system('color 1')
 print("-------------------------");
+os.system('color 2')
 print("--- WELCOME TO HEROES ---");
+os.system('color 3')
 print("-------------------------");
 print(" ");
 mapp = Map(5, 7)
@@ -23,7 +31,7 @@ print(mapp);
 print(" ");
 print (jane.toString())
 print (olaf.toString())
-
+os.system('color 0')
 count = 0
 while jane.hp > 0 and olaf.hp > 0:
   count += 1
