@@ -40,6 +40,8 @@ class Map:
       for x in range(self.width):
         self.map[y][x] = str(i);
         i += 1
+
+  def getLeft[height]:
             
  
 
