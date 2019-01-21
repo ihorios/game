@@ -13,10 +13,10 @@ class Map:
     self.width = width
     self.map = []
     self.init()
-    self.fill()
+    self.fill()  
 
   def getRandomColor(self):
-    return random.choice(self.colors);
+    return random00.choice(self.colors);
     
   def init(self):
     for i in range(self.height):
@@ -41,8 +41,55 @@ class Map:
         self.map[y][x] = str(i);
         i += 1
 
-  def getLeft[height]:
-            
+  def getLeftGems(self, height, width):
+    row = self.map[height]
+    return row[0:width+1].reverse()
+
+  def getRightGems(self, height, width):
+    row = self.map[height]
+    return row[width:len(row)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+                                                                                                                                                                                 
+
+
  
 
   
