@@ -15,8 +15,8 @@ class Map:
     self.init()
     self.fill()  
 
-  def getRandomColor(self):
-    return random00.choice(self.colors);
+  def getRandomGem(self):
+    return random.choice(self.colors);
     
   def init(self):
     for i in range(self.height):
@@ -34,16 +34,15 @@ class Map:
     return string
 
   def fill(self):
-    i = 0
     for y in range(self.height):
-      i = 0
       for x in range(self.width):
-        self.map[y][x] = str(i);
-        i += 1
+        self.map[y][x] = self.rules(y, x)
 
   def getLeftGems(self, height, width):
     row = self.map[height]
-    return row[0:width+1].reverse()
+    result = row[0:width+1]
+    result.reverse()
+    return result
 
   def getRightGems(self, height, width):
     row = self.map[height]
@@ -56,57 +55,36 @@ class Map:
       height -= 1
     return col
 
-  def getDownGems(self, height, width)
+  def getDownGems(self, height, width):
+    col = []
+    while(height < self.height):
+      col.append(self.map[height][width])
+      height += 1
+    return col
 
-    
-    
+  def explodeGems(self, gems):
+    if len(gems) < 3:
+      return 0;
+    if gems[0] == gems[1] and gems[0] == gems[2]:
+      return 1;
+    else:
+      return 0;
 
+  def rules(self, height, width):
+    candidate = self.getRandomGem()
+    leftGems = self.getLeftGems(height, width)
+    upGems = self.getUpGems(height, width)
+    leftGems[0] = candidate
+    upGems[0] = candidate
+    while self.explodeGems(leftGems) or self.explodeGems(upGems):
+      candidate = self.getRandomGem()
+      leftGems = self.getLeftGems(height, width)
+      upGems = self.getUpGems(height, width)
+      leftGems[0] = candidate
+      upGems[0] = candidate
+    return candidate
+                                                                                                                
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-    
-                                                                                                                                                                                 
-
-
- 
 
   
 
