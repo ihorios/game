@@ -60,8 +60,7 @@ class Map:
     while(height < self.height):
       col.append(self.map[height][width])
       height += 1
-    return col
-
+    return col[pol/
   def explodeGems(self, gems):
     if len(gems) < 3:
       return 0;
