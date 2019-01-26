@@ -1,5 +1,5 @@
-
-
+# - *- coding: utf-8 - *-
+# Lesson 1
 cars = "BMW, Ferrary, Toyota, Opel"
 print(cars)
 
@@ -39,3 +39,13 @@ favorite_sports = {'Кріштіан Рональдо': 'Футбол',
 'Этель Смит': 'Бадминтон',
 'Фрэнк Бридж': 'Регби'}
 print(favorite_sports)
+
+# Lesson 2
+
+import
+
+
+
+
+
+
