@@ -45,6 +45,7 @@ t.left(615)
 t.forward(50)
 t.left(215)
 t.forward(50)
+t.clear()
 
 #task 3
 
@@ -71,6 +72,7 @@ t.up()
 t.forward(50)
 t.down()
 t.forward(50)
+t.clear
 input()
 
 
