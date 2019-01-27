@@ -44,3 +44,23 @@ elif age == 13:
     print("Муха-хохотуха!")
 else:
     print("Что-что?")
+
+if 10 == 11 or 11 == 12 or 12 == 13:
+   print('13 + 49 + 84 + 155 + 97: что получится? Головная боль!')
+else:
+    print('Что-что?')
+
+if age >= 10 and age <= 13:
+     print('13 + 49 + 84 + 155 + 97: что получится? Головная боль!')
+else:
+    print('Что-что?')
+
+fred = None
+print(fred)
+
+fred = None
+if fred == None:
+    print("В переменной fred ничего нет")
+
+if age == 10:
+    p
